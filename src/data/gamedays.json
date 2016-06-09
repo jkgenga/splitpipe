@@ -1,0 +1,26 @@
+[
+  {
+    "id" : "1",
+    "games": [
+      {"id": "1", "home": "1", "guest": "2", "quote_1" : "23", "quote_0" : "32", "quote_2" : "25" },
+      {"id": "2", "home": "3", "guest": "4", "quote_1" : "12", "quote_0" : "72", "quote_2" : "123" }
+    ]
+  },
+  {
+    "id" : "2",
+    "games": [
+      {"id": "1", "home": "2", "guest": "3", "quote_1" : "15", "quote_0" : "27", "quote_2" : "22" },
+      {"id": "2", "home": "4", "guest": "1", "quote_1" : "33", "quote_0" : "32", "quote_2" : "13" }
+    ]
+  },
+  {
+    "id" : "3",
+    "games": [
+      {"id": "1", "home": "1", "guest": "3", "quote_1" : "35", "quote_0" : "57", "quote_2" : "42" },
+      {"id": "2", "home": "2", "guest": "4", "quote_1" : "32", "quote_0" : "42", "quote_2" : "33" }
+    ]
+  }
+
+]
+
+
