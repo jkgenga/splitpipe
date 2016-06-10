@@ -1,10 +1,18 @@
-<form>
-  <input type="text" ng-model="search">
-  <p ng-show="search">Du suchst gerade nach: {{search}}</p>
-</form>
 
-<table class="table" ng-controller="GamedaysCtrl">
-  <tr ng-repeat="gameday in gamedays | filter:search">
-    <td>{{gameday.id}}</td>
-  </tr>
-</table>
+
+<div ng-controller="GamedaysCtrl">
+  
+  <div ng-repeat="gameday in gamedays">
+    <table class="table">
+      <tr ng-repeat="game in gameday.games">
+        <td>{{game.id}}</td>
+        <td>{{teams[{{game.home}}].name}}</td>
+        <td>{{game.quote_1}}</td>
+        <td>{{game.quote_0}}</td>
+        <td>{{game.quote_2}}</td>
+        <td>{{game.guest}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+  

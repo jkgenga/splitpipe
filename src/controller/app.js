@@ -23,4 +23,7 @@ angular.module('tutorialApp', [ 'ngAnimate', 'ngRoute' ]).config(
   $http.get('data/gamedays.json').then(function(gamedaysResponse) {
     $scope.gamedays = gamedaysResponse.data;
   });
+  $http.get('data/teams.json').then(function(teamsResponse) {
+    $scope.teams = teamsResponse.data;
+  });
 });
