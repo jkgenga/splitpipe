@@ -1,6 +1,6 @@
 [
-  {"id": "1", "name": "Eintracht Frankfurt"  },
-  {"id": "2", "name": "FSV Mainz"            },
-  {"id": "3", "name": "TUS Tufflingen"       },
-  {"id": "4", "name": "1. FC Bayern München" }
+  {"id": 1, "name": "Eintracht Frankfurt"  },
+  {"id": 2, "name": "FSV Mainz"            },
+  {"id": 3, "name": "TUS Tufflingen"       },
+  {"id": 4, "name": "1. FC Bayern München" }
 ]

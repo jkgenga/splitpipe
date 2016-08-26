@@ -1,0 +1,46 @@
+{
+	"id": 1,
+	"gameday": 1,
+	"table": [
+		{
+			"rank": 1,
+			"team": "FSV Mainz",
+			"win": 1,
+			"equal": 0,
+			"loose": 0,
+			"goals": 2,
+			"got": 0,
+			"points": 3
+		},
+		{
+			"rank": 2,
+			"team": "Eintracht Frankfurt",
+			"win": 0,
+			"equal": 1,
+			"loose": 0,
+			"goals": 1,
+			"got": 1,
+			"points": 1
+		},
+		{
+			"rank": 3,
+			"team": "1. FC Bayern München",
+			"win": 0,
+			"equal": 1,
+			"loose": 0,
+			"goals": 1,
+			"got": 1,
+			"points": 1
+		},
+		{
+			"rank": 4,
+			"team": "TUS Tufflingen",
+			"win": 0,
+			"equal": 0,
+			"loose": 1,
+			"goals": 0,
+			"got": 2,
+			"points": 0
+		}
+	]
+}

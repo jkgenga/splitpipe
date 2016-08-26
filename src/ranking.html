@@ -1,0 +1,25 @@
+<div ng-controller="RankingCtrl">Aktuelle Tabelle für Spieltag
+	{{ranking.gameday}}!</div>
+
+<table class="table" ng-controller="RankingCtrl">
+	<thead>
+		<tr>
+			<th>Nr.</th>
+			<th>Team</th>
+			<th>S</th>
+			<th>U</th>
+			<th>N</th>
+			<th>Tore</th>
+			<th>Punkte</th>
+		</tr>
+	</thead>
+	<tr ng-repeat="rank in ranking.table">
+		<td>{{rank.rank}}</td>
+		<td>{{rank.team}}</td>
+		<td>{{rank.win}}</td>
+		<td>{{rank.equal}}</td>
+		<td>{{rank.loose}}</td>
+		<td>{{rank.goals}}:{{rank.got}}</td>
+		<td>{{rank.points}}</td>
+	</tr>
+</table>
