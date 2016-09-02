@@ -1,0 +1,26 @@
+<div ng-controller="AdminCtrl">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Gastgeber.</th>
+        <th>Ergebnis</th>
+        <th>Gäste</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="match in matches | filter:paginate">
+        <td><img src="{{match.Team1.TeamIconUrl}}" alt="">
+          {{match.Team1.TeamName}}</td>
+        <td>{{match.MatchResults[0].PointsTeam1}}:{{match.MatchResults[0].PointsTeam2}}</td>
+        <td><img src="{{match.Team2.TeamIconUrl}}" alt="">
+          {{match.Team2.TeamName}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination total-items="totalItems" ng-model="currentPage"
+    max-size="34" boundary-links="true" items-per-page="numPerPage"
+    class="pagination-sm"> </pagination>
+  <input type="button" value="save"
+    ng-click="saveMatches(matches)" />
+</div>
+

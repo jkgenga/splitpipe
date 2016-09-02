@@ -1,25 +1,41 @@
-<html ng-app="tutorialApp">
+<html ng-app="splitpipeApp">
 <head>
-  <meta charset="utf8" />
-  <title>AngularJS Tutorial</title>
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/style.css">
+<meta charset="utf8" />
+<title>Splitpipe</title>
+<link rel="stylesheet"
+  href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <div class="container">
 
     <p class="well">
-      <a href="#/">Start</a> | <a href="#/tipps">Tipps</a> | <a href="#/gamedays">Spieltage</a> | <a href="#/about">Über</a>
+      <a href="#/">Start</a> | <a href="#/tipps">Tipps</a> | <a
+        href="#/gamedays">Spieltage</a> | <a href="#/admin">Administration</a>
+      | <a href="#/test">test</a> | <a href="#/about">Über</a>
     </p>
     <div ng-view></div>
 
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
-  <script src="http://code.angularjs.org/1.4.8/angular-resource.js"></script>  
-  <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>  
-  
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+  <script src="http://code.angularjs.org/1.4.8/angular-resource.js"></script>
+  <script
+    src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+
   <script src="controller/app.js"></script>
+  <script src="controller/config.js"></script>
+  <script src="controller/adminCtrl.js"></script>
+  <script src="controller/rankingCtrl.js"></script>
+  <script src="controller/teamsCtrl.js"></script>
+  <script src="controller/gamedaysCtrl.js"></script>
+  <script src="controller/tippsCtrl.js"></script>
+  <script src="controller/tippsCtrl.js"></script>
+  <script src="controller/openLigaDBCtrl.js"></script>
+  <script src="controller/testCtrl.js"></script>
 </body>
 </html>

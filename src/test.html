@@ -1,0 +1,29 @@
+
+<div ng-controller="TestCtrl">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Gastgeber.</th>
+        <th>Ergebnis</th>
+        <th>Gäste</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="match in matches  | filter:paginate track by $index">
+        <td><img src="{{match.homeLogoUrl}}" alt="">
+          {{match.teamNameHome}}</td>
+        <td>{{match.goalsHome}}:{{match.goalsGuest}}</td>
+        <td><img src="{{match.guestLogoUrl}}" alt="">
+          {{match.teamNameGuest}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination total-items="totalItems" ng-model="currentPage"
+    max-size="34" boundary-links="true" items-per-page="numPerPage"
+    class="pagination-sm"> </pagination>
+  <input type="button" value="import all"
+    ng-click="importAll()"/>
+  <input type="button" value="delete all"
+    ng-click="deleteAll()"/>
+</div>
+
