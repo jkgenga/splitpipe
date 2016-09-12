@@ -7,7 +7,7 @@ require_once 'teamDao.php';
 $postdata = file_get_contents ( "php://input" );
 $json = json_decode ( $postdata );
 $action = $json->action;
-// $args = $json->args;
+$args = $json->args;
 
 if ($action == "importAll") {
   importAll ();
@@ -15,10 +15,20 @@ if ($action == "importAll") {
   loadAll ();
 } else if ($action == "deleteAll") {
   deleteAll ();
+} else if ($action == "update") {
+  error_log ( "args->match->matchId = " . $args->match->matchId );
+  $cm = $args->match;
+  error_log ( "cm->match->matchId = " . $cm->match->matchId);
+  update ();
+} else if ($action == "add") {
+  $cm = $args->match;
+  add ();
+} else if ($action == "remove") {
+  $cm = $args->match;
+  remove ();
 }
 
 error_log ( "action = " . $action );
-// loadAll();
 function importAll() {
   global $mysqli;
   $league_shortcut = "bl1";
@@ -118,6 +128,38 @@ function deleteAll() {
   $result = $mysqli->query ( $statement ) or die ( $mysqli->error . __LINE__ );
   $rows = $mysqli->affected_rows;
 }
-
+function update() {
+  global $mysqli;
+  global $cm;
+  if ($cm->goalsHome == $cm->goalsGuest) {
+    $result = 0;
+  } else if ($cm->goalsHome > $cm->goalsGuest) {
+    $result = 1;
+  } else {
+    $result = 2;
+  }
+  $statement = "UPDATE MATCHES set MATCH_DAY = $cm->matchDay, MATCH_DATE = '$cm->matchDate', TEAM_HOME_ID = $cm->teamHomeId, TEAM_GUEST_ID = $cm->teamGuestId, " .
+      "GOALS_HOME = $cm->goalsHome, GOALS_GUEST = $cm->goalsGuest, RESULT = $result where MATCH_ID = $cm->matchId;";
+  
+  error_log($statement);
+  $result = $mysqli->query ( $statement ) or die ( $mysqli->error . __LINE__ );
+  error_log($result);
+  $rows = $mysqli->affected_rows;
+}
+function add() {
+  // global $mysqli;
+  // global $cm;
+  // $statement = "INSERT INTO MATCHES;";
+  // $result = $mysqli->query ( $statement ) or die ( $mysqli->error . __LINE__ );
+  // $rows = $mysqli->affected_rows;
+}
+function remove() {
+  global $mysqli;
+  global $cm;
+  $statement = "DELETE FROM MATCHES where MATCH_ID = '$cm->matchId';";
+  $result = $mysqli->query ( $statement ) or die ( $mysqli->error . __LINE__ );
+  $rows = $mysqli->affected_rows;
+  echo $statement;
+}
 ?>
 				

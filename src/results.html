@@ -1,0 +1,62 @@
+<div ng-controller="OpenLigaDBCtrl">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Gastgeber.</th>
+				<th>Ergebnis</th>
+				<th>S</th>
+				<th>U</th>
+				<th>N</th>
+				<th>Gäste</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="match in matches | filter:paginate">
+				<td><img src="{{match.Team1.TeamIconUrl}}" alt="">
+				{{match.Team1.TeamName}}</td>
+				<td>{{match.MatchResults[0].PointsTeam1}}:{{match.MatchResults[0].PointsTeam2}}</td>
+				<td>W</td>
+				<td>U</td>
+				<td>l</td>
+				<td><img src="{{match.Team2.TeamIconUrl}}" alt="">
+				{{match.Team2.TeamName}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<pagination total-items="totalItems" ng-model="currentPage"
+		max-size="34" boundary-links="true" items-per-page="numPerPage"
+		class="pagination-sm"> </pagination>
+</div>
+
+<!-- 
+<div ng-controller="GamedaysCtrl">
+
+{{getTeamNameById()}}
+	<div ng-repeat="gameday in gamedays | filter:paginate">
+		<p>Spieltag: {{gameday.id}}</p>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nr.</th>
+					<th>Gastgeber</th>
+					<th>S</th>
+					<th>U</th>
+					<th>N</th>
+					<th>Gäste</th>
+				</tr>
+			</thead>
+			<tr ng-repeat="game in gameday.games">
+				<td>{{game.id}}</td>
+				<td>{{game.home}}</td>
+				<td>{{game.quote_1}}</td>
+				<td>{{game.quote_0}}</td>
+				<td>{{game.quote_2}}</td>
+				<td>{{game.guest}}</td>
+			</tr>
+		</table>
+	</div>
+	<pagination total-items="totalItems" ng-model="currentPage"
+		max-size="5" boundary-links="true" items-per-page="numPerPage"
+		class="pagination-sm"> </pagination>
+</div>
+-->

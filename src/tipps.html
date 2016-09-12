@@ -1,22 +1,53 @@
+<div ng-controller="TippsCtrl">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Gastgeber.</th>
+        <th>Quoten</th>
+        <th>Ergebnis</th>
+        <th>Gäste</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        ng-repeat="match in matches  | filter:paginate track by $index">
 
-<table class="table" ng-controller="TippsCtrl">
-	<thead>
-		<tr>
-			<th>Nr.</th>
-			<th>Gastgeber</th>
-			<th>S</th>
-			<th>U</th>
-			<th>N</th>
-			<th>Gäste</th>
-		</tr>
-	</thead>
-	<tr ng-repeat="tipp in tipps | filter:search">
-		<td>{{tipp.id}}</td>
-		<td>{{tipp.home}}</td>
-		<td>{{tipp.quote_1}}</td>
-		<td>{{tipp.quote_0}}</td>
-		<td>{{tipp.quote_2}}</td>
-		<td>{{tipp.guest}}</td>
-	</tr>
-</table>
+        <td>
+          <span>
+            <img src="{{match.homeLogoUrl}}" alt="">{{match.teamNameHome}}
+          </span>
+        </td>
+
+        <td class="admin-quotes">
+          <div>
+            <span class="admin-quotes-w"> <input type="button" data-toggle="button"
+              value={{match.quoteHomeWin}} />
+            </span> <span class="admin-quotes-d"> <input type="button"
+              value={{match.quoteDraw}} />
+            </span> <span class="admin-quotes-l "> <input type="button" value={{match.quoteGuestWin}} />
+            </span>
+          </div>
+        </td>
+
+        <td>
+          <div>{{match.goalsHome}}:{{match.goalsGuest}}</div>
+        </td>
+
+        <td>
+          <span>
+            <img src="{{match.guestLogoUrl}}" alt="">{{match.teamNameGuest}}
+          </span>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+  <pagination total-items="totalItems" ng-model="currentPage"
+    max-size="34" boundary-links="true" items-per-page="numPerPage"
+    class="pagination-sm"> </pagination>
+  <input type="button" value="import all" ng-click="importAll()" /> <input
+    type="button" value="delete all" ng-click="deleteAll()" />
+</div>
+
 

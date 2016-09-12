@@ -6,12 +6,12 @@ angular.module('splitpipeApp').config(
         templateUrl : 'ranking.html'
       }).when('/tipps', {
         templateUrl : 'tipps.html'
-      }).when('/gamedays', {
-        templateUrl : 'gamedays.html'
+      }).when('/results', {
+        templateUrl : 'results.html'
       }).when('/admin', {
         templateUrl : 'admin.html'
       }).when('/test', {
-        templateUrl : 'test.html'
+        templateUrl : 'test2.html'
       }).when('/about', {
         templateUrl : 'about.html'
       }).otherwise({

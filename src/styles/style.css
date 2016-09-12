@@ -1,8 +1,19 @@
-.cart-item.ng-enter {
-  -webkit-transition:0.5s linear all;
-  transition:0.5s linear all;
-  background-color: yellow;
+.admin-home {
+  width: 25%
 }
-.cart-item.ng-enter-active {
-  background-color: white;
+
+.admin-quotes {
+  width:  10%
+}
+
+.admin-guest {
+  width: 25%
+}
+
+.admin-buttons {
+  width: 25%
+}
+
+.col-xs-11 {
+  width: 33%
 }

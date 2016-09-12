@@ -1,26 +1,71 @@
+
 <div ng-controller="AdminCtrl">
-  <table class="table">
+  <table class="table table-striped table-bordered">
     <thead>
       <tr>
         <th>Gastgeber.</th>
+        <th>Quoten</th>
         <th>Ergebnis</th>
         <th>Gäste</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="match in matches | filter:paginate">
-        <td><img src="{{match.Team1.TeamIconUrl}}" alt="">
-          {{match.Team1.TeamName}}</td>
-        <td>{{match.MatchResults[0].PointsTeam1}}:{{match.MatchResults[0].PointsTeam2}}</td>
-        <td><img src="{{match.Team2.TeamIconUrl}}" alt="">
-          {{match.Team2.TeamName}}</td>
+      <tr
+        ng-repeat="match in matches  | filter:paginate track by $index">
+
+        <td>
+          <span>
+            <img src="{{match.homeLogoUrl}}" alt="">{{match.teamNameHome}}
+          </span>
+        </td>
+
+        <td class="admin-quotes">
+          <div ng-hide="editingData[match.matchId].showEditingQuotes">{{match.quoteHomeWin}} {{match.quoteDraw}} {{match.quoteGuestWin}}</div>
+          <div ng-show="editingData[match.matchId].showEditingQuotes">
+            <span class="admin-quotes-w"> <input type="text"
+              ng-model=match.quoteHomeWin class="form-control input-sm" />
+            </span> <span class="admin-quotes-d"> <input type="text"
+              ng-model=match.quoteDraw class="form-control input-sm" />
+            </span> <span class="admin-quotes-l "> <input type="text"
+              ng-model=match.quoteGuestWin class="form-control input-sm" />
+            </span>
+          </div>
+        </td>
+
+        <td>
+          <div ng-hide="editingData[match.matchId].showEditingResult">{{match.goalsHome}}:{{match.goalsGuest}}</div>
+          <div ng-show="editingData[match.matchId].showEditingResult">
+            <input type="text" ng-model=match.goalsHome
+              class="form-control input-sm" />:<input type="text"
+              ng-model=match.goalsGuest class="form-control input-sm" />
+          </div>
+        </td>
+
+        <td>
+          <span>
+            <img src="{{match.guestLogoUrl}}" alt="">{{match.teamNameGuest}}
+          </span>
+        </td>
+
+        <td>
+          <button class="btn btn-primary" ng-show="editingData[match.matchId].showPrimary"
+            ng-click="modifyQuotes(match)">Modify Quotes</button>
+          <button class="btn btn-primary" ng-show="editingData[match.matchId].showPrimary"
+            ng-click="modifyResult(match)">Modify Result</button>
+          <button class="btn btn-danger" ng-show="editingData[match.matchId].isModifyQuotes"
+            ng-click="executeModifyQuotes(match)">Confirm</button>
+          <button class="btn btn-danger" ng-show="editingData[match.matchId].isModifyResult"
+            ng-click="executeModifyResult(match)">Confirm</button>
+          <button class="btn btn-success" ng-hide="editingData[match.matchId].showPrimary"
+            ng-click="reset(match)">Cancel</button>
+        </td>
       </tr>
+
     </tbody>
   </table>
   <pagination total-items="totalItems" ng-model="currentPage"
     max-size="34" boundary-links="true" items-per-page="numPerPage"
     class="pagination-sm"> </pagination>
-  <input type="button" value="save"
-    ng-click="saveMatches(matches)" />
+  <input type="button" value="import all" ng-click="importAll()" /> <input
+    type="button" value="delete all" ng-click="deleteAll()" />
 </div>
-
