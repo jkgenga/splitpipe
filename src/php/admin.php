@@ -39,7 +39,11 @@ function importAll() {
   $columnsPending = "(MATCH_ID, MATCH_DATE, MATCH_DAY, TEAM_GUEST_ID, TEAM_HOME_ID)";
   
   // get remote data
+  // $response = file_get_contents( $url );
   $response = curl_get_file_contents ( $url );
+  if ($response == FALSE) {
+    error_log("unuable to fetch " . $url);
+  }
   // $response = file_get_contents ( $url );
   $json = json_decode ( $response );
   

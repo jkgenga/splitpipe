@@ -15,6 +15,7 @@ function findTeamById($teamId) {
 function addTeam($teamId, $logoUrl, $teamName) {
  global $mysqli;
  $table = "TEAMS";
+ $columns = "TEAM_ID, LOGO_URL, TEAM_NAME)";
  $statement = "INSERT INTO " . $table . " " . $columes . "values (" . $teamId . ", '" . $logoUrl . "', '" . $teamName . "')";
  $result = $mysqli->query ( $statement ) or die ( $mysqli->error . __LINE__ );
  $result = $mysqli->affected_rows;

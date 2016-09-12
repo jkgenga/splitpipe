@@ -13,6 +13,7 @@ function getAllMatchData() {
       . " FROM MATCHES m, TEAMS t1, TEAMS t2, QUOTES q" 
       . " WHERE m.TEAM_HOME_ID = t1.TEAM_ID and m.TEAM_GUEST_ID = t2.TEAM_ID and m.MATCH_ID = q.MATCH_ID" 
       . " order by m.MATCH_DAY, m.MATCH_ID;";
+
   $result = $mysqli->query ( $statement ) or die ( $mysqli->error . __LINE__ );
   $rows = $mysqli->affected_rows;
   $matches = array ();
