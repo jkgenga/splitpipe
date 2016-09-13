@@ -22,11 +22,11 @@
         <td>
           <div ng-hide="editingData[match.matchId].showEditingQuotes">{{match.quoteHomeWin}} {{match.quoteDraw}} {{match.quoteGuestWin}}</div>
           <div ng-show="editingData[match.matchId].showEditingQuotes">
-            <span class="admin-quotes-w"> <input type="text"
+            <span> <input type="text"
               ng-model=match.quoteHomeWin class="form-control input-sm" />
-            </span> <span class="admin-quotes-d"> <input type="text"
+            </span> <span> <input type="text"
               ng-model=match.quoteDraw class="form-control input-sm" />
-            </span> <span class="admin-quotes-l "> <input type="text"
+            </span> <span> <input type="text"
               ng-model=match.quoteGuestWin class="form-control input-sm" />
             </span>
           </div>
@@ -63,9 +63,9 @@
 
     </tbody>
   </table>
-  <pagination total-items="totalItems" ng-model="currentPage"
+  <div uib-pagination total-items="totalItems" ng-model="currentPage"
     max-size="34" boundary-links="true" items-per-page="numPerPage"
-    class="pagination-sm"> </pagination>
+    class="pagination-sm"/>
   <input type="button" value="import all" ng-click="importAll()" /> <input
     type="button" value="delete all" ng-click="deleteAll()" />
 </div>

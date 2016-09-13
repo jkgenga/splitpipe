@@ -9,23 +9,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        ng-repeat="match in matches  | filter:paginate track by $index">
+      <tr ng-repeat="match in matches  | filter:paginate track by $index">
+
+        <td><span> <img src="{{match.homeLogoUrl}}" alt="">{{match.teamNameHome}}
+        </span></td>
 
         <td>
-          <span>
-            <img src="{{match.homeLogoUrl}}" alt="">{{match.teamNameHome}}
-          </span>
-        </td>
-
-        <td>
-          <div>
-            <span class="admin-quotes-w"> <input type="button" data-toggle="button"
-              value={{match.quoteHomeWin}} />
-            </span> <span class="admin-quotes-d"> <input type="button"
-              value={{match.quoteDraw}} />
-            </span> <span class="admin-quotes-l "> <input type="button" value={{match.quoteGuestWin}} />
-            </span>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary"> <input type="radio"
+              name="radioGroup value={{match.quoteHomeWin}}">{{match.quoteHomeWin}}
+            </label> <label class="btn btn-primary"> <input type="radio"
+              name="radioGroup" value={{match.quoteDraw}}>{{match.quoteDraw}}
+            </label> <label class="btn btn-primary"> <input type="radio"
+              name="radioGroup" value={{match.quoteGuestWin}}>{{match.quoteGuestWin}}
+            </label>
           </div>
         </td>
 
@@ -33,21 +30,17 @@
           <div>{{match.goalsHome}}:{{match.goalsGuest}}</div>
         </td>
 
-        <td>
-          <span>
-            <img src="{{match.guestLogoUrl}}" alt="">{{match.teamNameGuest}}
-          </span>
-        </td>
+        <td><span> <img src="{{match.guestLogoUrl}}" alt="">{{match.teamNameGuest}}
+        </span></td>
 
       </tr>
 
     </tbody>
   </table>
-  <pagination total-items="totalItems" ng-model="currentPage"
+  <div uib-pagination total-items="totalItems" ng-model="currentPage"
     max-size="34" boundary-links="true" items-per-page="numPerPage"
-    class="pagination-sm"> </pagination>
-  <input type="button" value="import all" ng-click="importAll()" /> <input
-    type="button" value="delete all" ng-click="deleteAll()" />
+    class="pagination-sm" />
+  <input type="button" value="save" ng-click="saveTipps()" />
 </div>
 
 

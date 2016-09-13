@@ -9,7 +9,7 @@ function getAllMatchData() {
   $statement = "SELECT m.MATCH_ID as matchId, m.MATCH_DAY as matchDay, m.MATCH_DATE as matchDate, m.TEAM_HOME_ID as teamHomeId, m.TEAM_GUEST_ID as teamGuestId," 
       . " m.GOALS_HOME as goalsHome, m.GOALS_GUEST as goalsGuest, m.RESULT as result," 
       . " t1.TEAM_NAME as teamNameHome, t1.LOGO_URL as homeLogoUrl, t2.TEAM_NAME as teamNameGuest, t2.LOGO_URL as guestLogoUrl,"
-      . " q.QUOTE_GUEST_WIN as quoteHomeWin, q.QUOTE_DRAW as quoteDraw, q.QUOTE_GUEST_WIN as quoteGuestWin"
+      . " q.QUOTE_HOME_WIN as quoteHomeWin, q.QUOTE_DRAW as quoteDraw, q.QUOTE_GUEST_WIN as quoteGuestWin"
       . " FROM MATCHES m, TEAMS t1, TEAMS t2, QUOTES q" 
       . " WHERE m.TEAM_HOME_ID = t1.TEAM_ID and m.TEAM_GUEST_ID = t2.TEAM_ID and m.MATCH_ID = q.MATCH_ID" 
       . " order by m.MATCH_DAY, m.MATCH_ID;";

@@ -2,12 +2,43 @@
 <head>
 <meta charset="utf8" />
 <title>Splitpipe</title>
-<link rel="stylesheet"
-  href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="styles/style.css">
+<link href="lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="lib/jquery-3.1.0/jquery-3.1.0.js"></script>
+<script src="lib/angular-1.5.8/angular.js"></script>
+<script src="lib/angular-1.5.8/angular-animate.js"></script>
+<script src="lib/angular-1.5.8/angular-route.js"></script>
+<script src="lib/angular-1.5.8/angular-resource.js"></script>
+<script src="lib/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script src="lib/angular-ui/ui-bootstrap-tpls-2.1.3.js"></script>
+<script src="lib/angular-ui/angular-ui-router-1.0.0-beta.2.js"></script>
+
+<script src="controller/app.js"></script>
+<script src="controller/config.js"></script>
+<script src="controller/adminCtrl.js"></script>
+<script src="controller/rankingCtrl.js"></script>
+<script src="controller/teamsCtrl.js"></script>
+<script src="controller/gamedaysCtrl.js"></script>
+<script src="controller/tippsCtrl.js"></script>
+<script src="controller/tippsCtrl.js"></script>
+<script src="controller/openLigaDBCtrl.js"></script>
+<script src="controller/testCtrl.js"></script>
 </head>
 <body>
-  <div class="container">
+
+
+<!--   <div class="container">
+    <span class="well"> <a ui-sref="start"
+      ui-sref-active="active">Start</a> <a ui-sref="tipps"
+      ui-sref-active="active">Tipps</a> <a ui-sref="results"
+      ui-sref-active="active">Spielstand</a> <a ui-sref="admin"
+      ui-sref-active="active">Administration</a> <a ui-sref="test"
+      ui-sref-active="active">test</a> <a ui-sref="about"
+      ui-sref-active="active">Über</a> <ui-view></ui-view>
+    </span>
+  </div>
+ -->
+  <div class="container ">
 
     <p class="well">
       <a href="#/">Start</a> | <a href="#/tipps">Tipps</a> | <a
@@ -17,25 +48,5 @@
     <div ng-view></div>
 
   </div>
-  <script
-    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
-  <script
-    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
-  <script
-    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
-  <script src="http://code.angularjs.org/1.4.8/angular-resource.js"></script>
-  <script
-    src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
-
-  <script src="controller/app.js"></script>
-  <script src="controller/routes.js"></script>
-  <script src="controller/adminCtrl.js"></script>
-  <script src="controller/rankingCtrl.js"></script>
-  <script src="controller/teamsCtrl.js"></script>
-  <script src="controller/gamedaysCtrl.js"></script>
-  <script src="controller/tippsCtrl.js"></script>
-  <script src="controller/tippsCtrl.js"></script>
-  <script src="controller/openLigaDBCtrl.js"></script>
-  <script src="controller/testCtrl.js"></script>
 </body>
 </html>
